@@ -7,27 +7,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script>  
-		$(function() { 
-		    $(".btn").click(function(){
-		        $(this).button('loading').delay(1000).queue(function() {
-		            $(this).button('reset');
-		            $(this).dequeue();
-		        });        
-		    });
-		});
-
 		function clear() {
     		document.getElementById("dietaryform").reset();
     		document.getElementById("cuisinesform").reset();
     		document.getElementById("allergiesform").reset();
 		}
-
-		$.clearInput = function () {
-        	$('form').find('input[type=text], textarea').val('');
-		};
-		$('#Your_Modal').on('hidden', function () {
-        	$.clearInput();
-		});
 	</script>
 	<style>
 		h1 {
@@ -52,7 +36,7 @@
 		.jumbotron{
 			background-color: #C2A385;
 		}
-		#myModal{
+		#modalContact{
 			background-image: url('http://firedrakewroughtiron.com/DSC_0841.JPG');
 		}
 	</style>
@@ -114,11 +98,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal" onclick="clear()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Recipe Generator</h4>
       </div>
       <div class="modal-body">
-        <form id = "dietaryform">
+        <form type = "text" id = "dietaryform">
         	Dietary Restrictions: <input list = "dietary" name="dietary" size = "60">
         	<datalist id ="dietary">
         		<option value="Lacto vegetarian">
@@ -128,7 +112,7 @@
   				<option value="Vegetarian">
   			</datalist>
         </form><br>
-  		<form id="cuisinesform">
+  		<form type = "text" id="cuisinesform">
         	Cuisines: <input list = "cuisines" name="cuisines" size = "60">
         	<datalist id ="cuisines">
         		<option value="American">
@@ -158,7 +142,7 @@
   				<option value="Portugese">
   			</datalist>
         </form><br>
-        <form id="allergiesform">
+        <form type = "text" id="allergiesform">
         	Food Allergies: <input list = "allergies" name="allergies" size = "60">
         	<datalist id ="allergies">
         		<option value="Dairy">
@@ -175,7 +159,7 @@
         </form><br>
       </div>
       <div class="modal-footer">
-        <!--button type="button" class="btn btn-default" onclick="clear()">Clear</button-->
+        <button type="button" class="btn btn-default" onclick="clear()">Clear</button>
         <button type="button" class="btn btn-primary">Search</button>
       </div>
     </div>
