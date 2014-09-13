@@ -18,6 +18,7 @@
 	</script>
 	<style>
 		h1 {
+			padding-top: 1cm;
 			font-family: Impact, Charcoal, sans-serif;
 			text-align: center;
 			color: white;
@@ -26,10 +27,17 @@
 		body {
 			background-image: url('http://t2.ftcdn.net/jpg/00/51/98/91/400_F_51989102_zoLvDEnIt182rk53C1KTgorBmIRFhBHX.jpg');
 		}
+		#navcontainer{
+			padding-top: 0;
+		}
+		#brand{
+			font-color: white;
+		}
 	</style>
 	</head>
 	<h1>Recipe Generator</h1>
- 	<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+<div id="navcontainer" class="container">
+ 	<nav id="myNavbar" class="navbar navbar-default navbar-static-top" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="container">
 		<div class="navbar-header">
@@ -39,7 +47,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Tutorial Republic</a>
+			<a id: "brand" class="navbar-brand" href="http://2014f.pennapps.com/">PennApps 2014</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbarCollapse">
@@ -50,11 +58,12 @@
 			</ul>
 		</div>
 	</div>
+</div>
 </nav>
 <div class="container">
 	<div class="jumbotron">
-		<h1>Learn to Create Websites</h1>
-		<p>In today's world internet is the most popular way of connecting with the people. At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
+		<h1>Find your own personalized recipe!</h1>
+		<p>In today's world rapid world, there's no time to spend hours cooking. That's why we've created the perfect solution... Recipe Generator! Select your eating preferences from the drop down menus and we'll use a unique algorithm to find the perfect recipe for you!</p>
 		<p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
 	</div>
 	<div class="row">
