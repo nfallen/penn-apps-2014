@@ -14,11 +14,11 @@
 		            $(this).dequeue();
 		        });        
 		    });
-		}); 
+		});
 	</script>
 	<style>
 		h1 {
-			padding-top: 1cm;
+			padding-top: .3cm;
 			font-family: Impact, Charcoal, sans-serif;
 			text-align: center;
 			color: black;
@@ -42,9 +42,9 @@
 	</style>
 	</head>
 	<h1>Recipe Generator</h1>
+	<!-- navbar-->
 <div id="navcontainer" class="container">
  	<nav id="myNavbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
-	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
@@ -59,7 +59,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">Home</a></li>
-				<li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
+				<li><a href="http://www.yummly.com/" target="_blank">Yummly</a></li>
 				<li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
 			</ul>
 		</div>
@@ -67,21 +67,97 @@
 </div>
 </nav>
 <div class="container">
+	<!-- center box with text-->
 	<div class="jumbotron">
 		<h1>Find your own personalized recipe!</h1>
 		<p>In today's world rapid world, there's no time to spend hours cooking. That's why we've created the perfect solution... Recipe Generator! Select your eating preferences from the drop down menus and we'll use a unique algorithm to find the perfect recipe for you!</p>
-		<p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-primary btn-lg">Get started today</a></p>
+		<p><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Get started today!</button></p>
 	</div>
+
+	<!--popup menu -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Recipe Generator</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+        	Dietary Restrictions: <input list = "dietary" name="dietary" size = "60">
+        	<datalist id ="dietary">
+        		<option value="Lacto vegetarian">
+  				<option value="Ovo vegetarian">
+  				<option value="Pescatarian">
+  				<option value="Vegan">
+  				<option value="Vegetarian">
+  			</datalist>
+        </form><br>
+  		<form>
+        	Cuisines: <input list = "cuisines" name="cuisines" size = "60">
+        	<datalist id ="cuisines">
+        		<option value="American">
+  				<option value="Italian">
+  				<option value="Asian">
+  				<option value="Mexican">
+  				<option value="Southern & Soul Food">
+  				<option value="French">
+  				<option value="Southwestern">
+  				<option value="Barbecue">
+  				<option value="Indian">
+  				<option value="Chinese">
+  				<option value="Cajun & Creole">
+  				<option value="English">
+  				<option value="Mediterranean">
+  				<option value="Greek">
+  				<option value="Spanish">
+  				<option value="German">
+  				<option value="Thai">
+  				<option value="Moroccan">
+  				<option value="Irish">
+  				<option value="Japanese">
+  				<option value="Cuban">
+  				<option value="Hawaiin">
+  				<option value="Swedish">
+  				<option value="Hungarian">
+  				<option value="Portugese">
+  			</datalist>
+        </form><br>
+        <form>
+        	Food Allergies: <input list = "allergies" name="allergies" size = "60">
+        	<datalist id ="allergies">
+        		<option value="Dairy">
+  				<option value="Egg">
+  				<option value="Gluten">
+  				<option value="Peanut">
+  				<option value="Seafood">
+  				<option value="Sesame">
+  				<option value="Soy">
+  				<option value="Sulfite">
+  				<option value="Tree Nut">
+  				<option value="Wheat">
+  			</datalist>
+        </form><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- bottom three boxes -->
 	<div class="row">
 		<div class="col-xs-3">
 			<h2>Dietary Restrictions</h2>
-			<p>Supported Diets: Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian</p>
+			<p>Supported Diets: Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, and Vegetarian</p>
 			<p><a href="http://www.webmd.com/allergies/guide/food-allergy-intolerances" target="_blank" class="btn btn-primary">Learn More &raquo;</a></p>
 		</div>
 		<div class="col-xs-1"></div> 
 		<div class="col-xs-3">
 			<h2>Cuisines</h2>
-			<p>Supported Cuisines: American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese</p>
+			<p>Supported Cuisines: American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, and Portugese</p>
 			<p><a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-primary">Learn More &raquo;</a></p>
 		</div>
 		<div class="col-xs-1"></div> 
