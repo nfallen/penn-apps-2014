@@ -15,11 +15,19 @@
 		        });        
 		    });
 		});
+
 		function clear() {
     		document.getElementById("dietaryform").reset();
     		document.getElementById("cuisinesform").reset();
     		document.getElementById("allergiesform").reset();
 		}
+
+		$.clearInput = function () {
+        	$('form').find('input[type=text], textarea').val('');
+		};
+		$('#Your_Modal').on('hidden', function () {
+        	$.clearInput();
+		});
 	</script>
 	<style>
 		h1 {
@@ -68,13 +76,13 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">Home</a></li>
 				<li><a href="http://www.yummly.com/" target="_blank">Yummly</a></li>
-				<li><a data-toggle="modal" data-target="#myModal">Contact Us!</a></li>
+				<li><a data-toggle="modal" data-target="#modalContact">Contact Us!</a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 <!-- Modal Contact -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -98,15 +106,15 @@
 	<div class="jumbotron">
 		<h1>Find your own personalized recipe!</h1>
 		<p>In today's world rapid world, there's no time to spend hours cooking. That's why we've created the perfect solution... Recipe Generator! Select your eating preferences from the drop down menus and we'll use a unique algorithm to find the perfect recipe for you!</p>
-		<p><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Get started today!</button></p>
+		<p><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#menuModal">Get started today!</button></p>
 	</div>
 
 	<!--popup menu -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" onclick="clear()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Recipe Generator</h4>
       </div>
       <div class="modal-body">
@@ -167,7 +175,7 @@
         </form><br>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="clear()">Clear</button>
+        <!--button type="button" class="btn btn-default" onclick="clear()">Clear</button-->
         <button type="button" class="btn btn-primary">Search</button>
       </div>
     </div>
